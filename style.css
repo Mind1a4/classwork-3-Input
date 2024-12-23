@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f7f9;
+  font-family: "Plus Jakarta Sans", serif;
+}
+/* Header Start */
+header {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+
+  z-index: 999;
+  height: 124px;
+  align-items: center;
+}
+header .header-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.header-container .logo-serchbar {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.logo-serchbar .search-wrapper {
+  position: relative;
+}
+
+.search-wrapper .search-input {
+  /* width: 492px; */
+  width: 300px;
+  height: 44px;
+  border: 1px solid #c3d4e940;
+  outline: none;
+  border-radius: 70px;
+  padding: 0px 50px;
+  transition: width 0.25s;
+}
+
+.search-wrapper .search-input:focus,
+.search-wrapper .search-input:not(:placeholder-shown) {
+  width: 492px;
+}
+
+.search-input::placeholder {
+  color: #596780;
+  font-family: "Plus Jakarta Sans", serif;
+  font-weight: 500;
+}
+
+.search-icon,
+.x-icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 20px;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: #596780;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  rotate: 90deg;
+  transition: opacity 0.25s, rotate 0.25s;
+  /* transition: ; */
+  cursor: pointer;
+}
+
+.search-input:placeholder-shown ~ .search-icon {
+  opacity: 1;
+  rotate: 0deg;
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* არ არის - მართალი */
+
+.search-input:not(:placeholder-shown) ~ .x-icon {
+  opacity: 1;
+  rotate: 0deg;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.search-wrapper .setting-btn {
+  display: flex;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+
+button {
+  all: unset;
+}
+
+/* clears the ‘X’ from Internet Explorer */
+input[type="search"]::-ms-clear,
+input[type="search"]::-ms-reveal {
+  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  appearance: none;
+}
+
+/* Other elements */
+.header-container ul li {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+}
+
+.logo-serchbar {
+  display: flex;
+}
+
+nav {
+  display: flex;
+}
+.NotificationContainer {
+  margin-right: 30px;
+}
+.NotificationBell {
+  position: absolute;
+}
+.NotificationMark {
+  position: relative;
+  top: 2px;
+  left: 32px;
+  width: 11px;
+  height: 11px;
+}
